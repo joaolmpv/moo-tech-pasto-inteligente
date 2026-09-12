@@ -1,0 +1,106 @@
+:root {
+  color-scheme: light dark;
+  --green: #16a34a;
+  --yellow: #ca8a04;
+  --red: #dc2626;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 24px;
+  border-bottom: 1px solid #334155;
+}
+
+header h1 {
+  margin: 0 0 4px;
+}
+
+header p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+main {
+  padding: 24px;
+}
+
+#alertas {
+  margin-bottom: 24px;
+}
+
+.alerta {
+  background: #451a03;
+  border-left: 4px solid var(--yellow);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.alerta.superpastejo {
+  background: #450a0a;
+  border-left-color: var(--red);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 16px;
+  border-top: 4px solid var(--green);
+}
+
+.card.ROTACAO_RECOMENDADA {
+  border-top-color: var(--yellow);
+}
+
+.card.SUPERPASTEJO {
+  border-top-color: var(--red);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card .indice {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.card dl {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px 8px;
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 8px 0;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #334155;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #475569;
+}

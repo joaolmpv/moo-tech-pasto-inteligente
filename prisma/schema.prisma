@@ -1,0 +1,58 @@
+// Modelagem minima do "Pasto IA": piquetes monitorados, animais com brinco
+// RFID e alertas de superpastejo -- nucleo do prototipo do Moo Tech.
+//
+// Usa SQLite para simplificar a execucao local do prototipo; em producao
+// a stack definida no projeto e PostgreSQL.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Farm {
+  id       String    @id @default(cuid())
+  name     String
+  city     String
+  piquetes Piquete[]
+}
+
+model Piquete {
+  id                String   @id @default(cuid())
+  farmId            String
+  farm              Farm     @relation(fields: [farmId], references: [id])
+  name              String
+  areaHectares      Float
+  capacidadeUA      Float // capacidade em Unidades Animal (UA) do piquete
+  lotacaoAtualUA    Float // lotacao animal atual
+  diasDescanso      Int // dias desde a ultima rotacao/descanso
+  // Indice de saude do pasto (0-100), calculado pelo modulo de simulacao/IA
+  // a partir de lotacao x tempo de descanso. Ver src/simulate.js.
+  indiceSaude       Int      @default(100)
+  ultimaRotacao     DateTime @default(now())
+  animais           Animal[]
+  alertas           Alerta[]
+}
+
+model Animal {
+  id         String   @id @default(cuid())
+  rfidTag    String   @unique // brinco RFID (Sense)
+  piqueteId  String
+  piquete    Piquete  @relation(fields: [piqueteId], references: [id])
+  raca       String?
+  entradaFazenda DateTime @default(now())
+}
+
+model Alerta {
+  id        String   @id @default(cuid())
+  piqueteId String
+  piquete   Piquete  @relation(fields: [piqueteId], references: [id])
+  // "SUPERPASTEJO" | "ROTACAO_RECOMENDADA"
+  tipo      String
+  mensagem  String
+  createdAt DateTime @default(now())
+  resolvido Boolean  @default(false)
+}
