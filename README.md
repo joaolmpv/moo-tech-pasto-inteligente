@@ -1,8 +1,26 @@
-# Moo Tech — Pasto Inteligente
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Pasto+Inteligente;IoT+%2B+IA+para+pecu%C3%A1ria+de+corte;Cuidar+do+rebanho%2C+do+pasto+e+do+bolso&font=Fira%20Code&center=true&width=520&height=45&color=16a34a&vCenter=true&pause=1200&size=20" alt="Moo Tech" />
+</p>
 
-### IoT + IA para gestão de pecuária de corte
+<h1 align="center">🐮 Moo Tech — Pasto Inteligente</h1>
+<p align="center"><b>Cofundador &amp; CEO</b> · Participante do <b>Programa Centelha 3 Goiás (MCTI)</b></p>
 
-> Cofundador & CEO. Participante do **Programa Centelha 3 Goiás (MCTI)**.
+<p align="center">
+  <img alt="Node.js" height="36" title="Node.js" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" />
+  <img alt="Express" height="36" title="Express" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" />
+  <img alt="Prisma" height="36" title="Prisma" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/prisma/prisma-original.svg" />
+  <img alt="SQLite" height="36" title="SQLite (protótipo)" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" />
+  <img alt="PostgreSQL" height="36" title="PostgreSQL (produção)" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" />
+  <img alt="JavaScript" height="36" title="JavaScript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" />
+</p>
+
+## 📸 Protótipo em ação
+
+<p align="center">
+  <img src="./docs/screenshots/dashboard.png" alt="Dashboard do Pasto IA mostrando 6 piquetes, seus índices de saúde e um alerta de superpastejo ativo" width="720" />
+</p>
+
+<p align="center"><i>Mapa de piquetes real, gerado pelo protótipo deste repositório — não é mockup. Rode você mesmo em <a href="#como-começar">Como Começar</a>.</i></p>
 
 ## O Problema
 
@@ -84,6 +102,14 @@ npm run dev                           # sobe o dashboard em http://localhost:300
 ```
 
 O seed cria 6 piquetes em diferentes estágios de pastejo — pelo menos um já nasce em risco de superpastejo, para você ver o alerta funcionando imediatamente. O botão "Registrar rotação" em cada piquete simula o manejo real: zera os dias de descanso, recalcula o índice de saúde e resolve o alerta.
+
+## 📅 Diário de Desenvolvimento
+
+> Atualize esta tabela a cada sessão de trabalho — uma linha por dia é suficiente. É o histórico que mostra evolução real, não só o resultado final.
+
+| Data | O que mudou |
+|---|---|
+| 2026-09-14 | Protótipo do **Pasto IA** publicado: schema Prisma (Farm, Piquete, Animal/RFID, Alerta), regra de saúde do pasto, API Express e dashboard funcionando ponta a ponta — alerta de superpastejo gerado e resolvido em tempo real via "Registrar rotação". |
 
 ## Roadmap
 
